@@ -1,6 +1,6 @@
 {
   "name": "electricorder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Records movies with electron",
   "main": "cli.js",
   "dependencies": {
