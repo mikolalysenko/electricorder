@@ -9,9 +9,23 @@ var argv = require('minimist')(process.argv.slice(2))
 
 var shellPath = path.join(os.tmpdir(), 'electricorder.html')
 
+function printArgs () {
+  console.log(`
+electricorder arguments:
+    -fps          frame rate of video
+    -ffmpeg       path to ffmpeg
+    -width, -w    video width
+    -height, -h   video height
+    -time         video duration in seconds
+    -frames       number of frames
+    -format       ffmpeg format
+    -o            output file (if unspecified redirects to stdout)
+`)
+}
+
 if (argv._.length !== 1) {
-  console.error('must specify path for movie to record')
-  process.exit()
+  printArgs()
+  electron.app.quit()
 }
 
 var fps = +argv.fps || 60
