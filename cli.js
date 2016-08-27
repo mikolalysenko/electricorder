@@ -32,7 +32,7 @@ var fps = +argv.fps || 60
 
 var frameCount = 1000
 if ('time' in argv) {
-  frameCount = argv.time / fps
+  frameCount = Math.ceil(argv.time * fps)
 } else if ('frames' in argv) {
   frameCount = argv.frames
 }
