@@ -14,7 +14,15 @@ if (argv._.length !== 1) {
   process.exit()
 }
 
-var frameCount = (argv.frames || 1000) | 0
+var fps = +argv.fps || 60
+
+var frameCount = 1000
+if ('time' in argv) {
+  frameCount = argv.time / fps
+} else if ('frames' in argv) {
+  frameCount = argv.frames
+}
+
 var frameWidth = (argv.width || argv.w || 256) | 0
 var frameHeight = (argv.height || argv.h || 256) | 0
 var recorderOptions = {
