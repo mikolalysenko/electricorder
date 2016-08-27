@@ -4,7 +4,7 @@ Records a movie using electron.
 ## Usage
 
 ```
-electricorder myscript.js -o mymovie.mp4 -w 1024 -h 768 -fps 60
+electricorder myscript.js -o mymovie.mp4 -w 1024 -h 768 -fps 60 -time 60
 ```
 
 ## Install
